@@ -1,1 +1,24 @@
 
+Question -2
+
+
+input-[2,1,2,4]
+
+Turn 1 - [2,1,2,4]-  nothing - no changes
+ Turn 2-  [4,1,2,4] - 2
+Turn 3 - 1 added [4,2, 2,4]
+Turn 4- 2 added       [4,,4,2,4]
+Turn 5 - no changes
+Turn 6 - [4,4,4,4]
+
+output -6
+
+To solve this problem, you want to equalize an array by using two generators:
+
+Generator 1: Adds 1 to at most one element in the array.
+Generator 2: Adds 2 to at most one element in the array.
+The goal is to determine the minimum number of times you need to use these generators to make all the elements in the array equal.
+
+Case-2
+[1,1,1,2]
+output- 
