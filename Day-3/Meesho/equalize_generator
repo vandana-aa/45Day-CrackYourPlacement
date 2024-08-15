@@ -1,24 +1,60 @@
+Problem Statement: Equalizing an Array Using Generators
 
-Question -2
+You are given an array of integers. Your task is to make all elements in the array equal by using two types of generators:
+
+Generator 1: Adds 1 to at most one element in the array during a turn.
+Generator 2: Adds 2 to at most one element in the array during a turn.
+Objective: Determine the minimum number of turns needed to make all elements in the array equal using these two generators.
+
+Rules:
+
+On each turn, you can choose to use either Generator 1 or Generator 2 or make no changes.
+The goal is to reach a state where all elements in the array are equal.
+Example 1:
+Input: [2, 1, 2, 4]
+Steps:
+
+Turn 1: No changes, array remains [2, 1, 2, 4]
+Turn 2: Add 2 to the first element, array becomes [4, 1, 2, 4]
+Turn 3: Add 1 to the second element, array becomes [4, 2, 2, 4]
+Turn 4: Add 2 to the third element, array becomes [4, 4, 2, 4]
+Turn 5: No changes, array remains [4, 4, 2, 4]
+Turn 6: Add 2 to the third element, array becomes [4, 4, 4, 4]
+Output: The number of turns required to equalize the array is 6.
 
 
-input-[2,1,2,4]
+Example 2:
+Input: [1, 1, 1, 2]
+Steps:
 
-Turn 1 - [2,1,2,4]-  nothing - no changes
- Turn 2-  [4,1,2,4] - 2
-Turn 3 - 1 added [4,2, 2,4]
-Turn 4- 2 added       [4,,4,2,4]
-Turn 5 - no changes
-Turn 6 - [4,4,4,4]
+Turn 1: Add 1 to the first element, array becomes [2, 1, 1, 2]
+Turn 2: No changes, array remains [2, 1, 1, 2]
+Turn 3: Add 1 to the second element, array becomes [2, 2, 1, 2]
+Turn 4: No changes, array remains [2, 2, 1, 2]
+Turn 5: Add 1 to the third element, array becomes [2, 2, 2, 2]
+Output: The number of turns required to equalize the array is 5.
 
-output -6
 
-To solve this problem, you want to equalize an array by using two generators:
+Problem Requirements
+Write a function that takes an integer array as input and returns the minimum number of turns needed to equalize the array.
+The function should simulate the use of Generator 1 and Generator 2 as described, applying the generators strategically to achieve the goal with the minimum turns.
 
-Generator 1: Adds 1 to at most one element in the array.
-Generator 2: Adds 2 to at most one element in the array.
-The goal is to determine the minimum number of times you need to use these generators to make all the elements in the array equal.
+Input: A list of integers representing the array.
+Output: An integer representing the minimum number of turns required.
 
-Case-2
-[1,1,1,2]
-output- 
+Example Input/Output
+Input: [2, 1, 2, 4]
+Output: 6
+Input: [1, 1, 1, 2]
+Output: 5
+
+
+
+Hints:
+1. First, identify the largest number in the array, as all elements will eventually need to be increased to this value.
+2. Focus on the difference between each element and the maximum element.
+3. Prioritize using Generator 2 (adding 2) when possible, and use Generator 1 (adding 1) to fine-tune the values.
+
+
+Solution - there was arraylist given - i conveted into array, so i could use sort function
+
